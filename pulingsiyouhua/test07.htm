@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script> -->
+    <script src="node_modules/angular/angular.min.js"></script>
+    <!-- <script src="https://cdn.bootcss.com/angular.js/1.5.11/angular.min.js"></script> -->
+    <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+   <!--  <script src="https://cdn.bootcss.com/angular.js/1.5.11/angular-animate.min.js"></script> -->
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <!-- <script src="https://cdn.bootcss.com/angular-ui-router/1.0.3/angular-ui-router.js"></script> -->
+    <script src="node_modules/angular-touch/angular-touch.min.js"></script>
+    <!-- <script src="https://cdn.bootcss.com/angular.js/1.5.11/angular-touch.min.js"></script> -->
+    <script src="https://cdn.bootcss.com/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script> 
+    <title>yu</title>
+    <link rel="stylesheet" type="text/css" href="css/a.css">
+</head>
+<body style="overflow-x: hidden;">
+    <nav class="row" ng-controller="nav1" style="background: #468fae;height: 50px;">
+      <div class="col-sm-offset-2 col-sm-6" style="padding-top: 10px;">
+        <a href="#" class="navfont" style="font-size: 20px;">东莞市普灵思智能电子有限公司</a>
+      </div>
+      <div class="col-sm-1" style="padding-top: 15px;padding-bottom: 15px">     
+         <a ui-sref="home" class="navfont">首页</a>
+      </div>
+     <div class="col-sm-1" style="padding-top: 15px;padding-bottom: 15px" id="about"  ng-mouseenter="change01('guan','about')" ng-mouseleave="change02('guan','about')">
+            <span ><a ui-sref="guanyu.gongsi" class="navfont">关于我们<span class="caret"></span></a></span> 
+              <ul class="drop01" id="guan" >
+                <li class="dropli">
+                    <a ui-sref="guanyu.gongsi" class="dropfont">公司简介</a>         
+                </li>
+                <li class="dropli">
+                    <a ui-sref="guanyu.zhaomu" class="dropfont">招募精英</a>         
+                </li>
+                <li class="dropli">
+                    <a ui-sref="guanyu.lianxi" class="dropfont">联系我们</a>          
+                </li>
+              </ul>
+          </div>
+    </nav>
+    <div ui-view></div> 
+    <div class="" >
+        <span><a ui-sref="denglu" class="navfont">登录</a></span>
+     </div>
+    <!-- <div class="text-center">
+    <a href="#" class="ex1">testtstst</a> 
+    </div>  -->
+   <div class="jumbotron">
+       <div class="row">
+           <div class="col-sm-offset-8 col-sm-2">
+               <ul class="list-unstyled">
+                   <li style="padding-bottom:5px;">关于我们</li>
+                   <li><a ui-sref="guanyu.gongsi">公司简介</a></li>
+                   <li><a ui-sref="guanyu.zhaomu">招募精英</a></li>
+                   <li><a ui-sref="guanyu.lianxi">联系我们</a></li>
+               </ul>
+           </div>
+       </div>
+   </div> 
+</body>
+<script src="js/main.js"></script>
+</html>

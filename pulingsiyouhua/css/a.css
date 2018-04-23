@@ -1,0 +1,121 @@
+  body{
+    overflow-x: hidden;
+  }
+   nav{
+    background: #468fae;height: 50px;
+   }
+   #brand {
+      padding-top: 10px;
+   }
+   #brand a{
+      font-size: 20px;
+   }
+   nav .font{
+    padding-top: 15px;padding-bottom: 15px;
+   }
+
+  #navtwo{
+    height: 34px;
+    background: #eee;
+    line-height: 34px;
+  }
+   #banner h2{
+        font-size: 3.5em ; 
+        margin: 0;
+        color: #FFF;
+        text-shadow: 0px 2px 0px rgba(51, 51, 51, 0.3);
+        height: 640px;
+        line-height: 640px;
+        background: url(../img/1.jpg) no-repeat;      
+        text-align: center;
+   } 
+    .drop01{
+      list-style: none;
+      padding-left:0;
+      display: none;
+      position: absolute;
+      z-index: 10;
+      margin-top:15px;
+      padding:0 15px 10px 15px;
+      background:rgb(244, 244, 240,0.8);
+      border:1px solid silver
+    }
+    .displayBlock{
+      display: block;
+    }
+    .zuce{
+      display: inline-block;
+      padding-left: 10px;
+    }
+    /* .navfont,.navfont:active,.navfont:visited{
+      color:white;
+    } */
+    .navfont:link,.navfont:hover,.navfont:active,.navfont:visited{
+      color: white;
+      text-decoration: none;
+    }
+    .dropfont:link,.dropfont:hover,.dropfont:active,.dropfont:visited{
+      color: black;
+      text-decoration: none;
+    }
+    .dropli{
+      padding:5px 5px 5px 0px;
+    }
+    .navhover:hover{
+      background-color: rgba(255,255,255,0.2); 
+    }
+    .h1text{
+      font-size: 38px;
+    }
+    .wharf,.train,.fireControl,.uav{background: url(../img/51.png) no-repeat;width: 126px;height: 126px;
+      margin: 0 auto;}
+    .wharf{
+        background-position: 0 0;
+    }
+    .train{
+        background-position: -330px 0;
+    }
+    .fireControl{
+         background-position: -652px 0;
+    }
+    .uav{
+      background-position: -980px 0;
+    }
+    .denglu{
+      background: white;
+      height: 736px;
+    }
+    .zhaomu{
+      padding-top: 125px;
+      padding-bottom: 170px;
+    }
+    .jumb{
+      width: 100%;
+      background:#BBBBBB; 
+      padding-top: 53px;
+      padding-bottom: 53px;
+    }
+    .lianxi{
+      height: 700px;
+      padding-top:100px;
+    }
+    form{
+      border: 1px solid #dddddd;
+      border-radius: 6px;
+      padding-top: 34px;
+      padding-bottom: 40px;
+      padding-left: 40px;
+      padding-right: 80px;
+      margin-top: 50px;
+    }
+    
+    .huanyin{
+      background: white;
+      height: 730px;
+    }
+    .huanyin h1{
+      margin-top: 50px;
+    }
+    .huanyin p{
+      text-indent: 2em;
+    }

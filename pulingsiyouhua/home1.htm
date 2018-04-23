@@ -1,0 +1,41 @@
+ <div ng-controller="CarouselDemoCtrl"> 
+       <div class="row">
+         <div class="col-sm-12 col-md-12">
+             <div style="height: 700px;position: relative;">
+             <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+               <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+                 <img ng-src={{slide.image}}>
+                 <div class="carousel-caption">
+                   <!-- <h4>Slide {{slide.id}}</h4> -->
+                   <h1 class="h1text">{{slide.text}}<h1>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>    
+       
+      <div class="row">
+        <h1 class="text-center">行业解决方案</h1>
+        <p class="text-center">科技正用你无法想象的速度在改变世界，改变人们的生活</p>
+        <div class="col-sm-2 col-sm-offset-2 ">
+        <div class="wharf"></div>
+        <h3 class="text-center">码头</h3>
+        <p>D-GNSS及惯性导航紧耦合，提供强大的亚米级定位，主动选星技术大大增强抗多径能力，车辆在货柜之间亦能精准定位。</p>
+        </div>
+        <div class="col-sm-2" >
+        <div class="train"></div>
+        <h3 class="text-center">铁路</h3>
+        <p>铁路工作人员随身携带物品如方位灯进行嵌入式安装，对铁路室外人员精确定位，集考勤，安全预警，指挥调度于一体。。</p>
+        </div>
+        <div class="col-sm-2 ">
+        <div class="fireControl"></div>
+        <h3 class="text-center">消防</h3>
+        <p>指挥中心利用精确定位，准确了解行动单位每一个人的准确位置，并实时制定安全路线，指挥前线人员安全作业。</p>
+        </div>
+        <div class="col-sm-2">
+        <div class="uav"></div>
+        <h3 class="text-center">无人机</h3>
+        <p>对无人机进行定位或监控，可实时监控多台飞行路径，无论飞机在何处，都能随时掌握。</p>
+        </div>
+    </div>   

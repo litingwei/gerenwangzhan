@@ -1,0 +1,36 @@
+<div class="denglu" ng-controller="Aaa">
+	<div class="col-sm-4 col-sm-offset-3 ">
+		<h1>登录</h1>
+		<hr>
+		<div ng-cloak>{{tip}}</div>
+		<form novalidate name="nForm">
+			<h3>请登录以便享受更加快捷方便的购买体验</h3>
+			<div class="form-group">
+				<div class="input-group">
+					<div class="input-group-addon">
+						<span class="glyphicon glyphicon-user"></span>
+					</div>
+					<input type="text" name="nText" ng-model="text1" class="form-control" placeholder="邮箱/用户名/手机号" required>				
+				</div>
+			</div>	
+			<div class="form-group">
+				<div class="input-group">
+					<!-- <label>密码:</label> -->
+					<div class="input-group-addon">
+						<span class="glyphicon glyphicon-lock"></span>
+					</div> 	
+					<input type="password" ng-model="password1" name="nPassword" class="form-control" placeholder="密码" required>					
+				</div>
+			</div>			
+			<div class="col-sm-offset-9">
+				<a href="">忘记密码</a>
+			</div>
+			<!-- <div>{{nForm.nText.$error}}</div>
+			<div>{{nForm.nPassword.$error}}</div>  -->
+			<button ng-click="change(nForm.nText.$error,nForm.nPassword.$error)" type="submit" class="btn btn-primary btn-block">登录</button>
+			<div class="col-sm-offset-9">
+				<a ui-sref="zuce">立即注册</a>
+			</div>			
+		</form>
+	</div>
+</div>

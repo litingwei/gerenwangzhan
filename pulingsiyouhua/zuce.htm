@@ -1,0 +1,68 @@
+<div class="huanyin">
+	<div class="col-sm-6 col-sm-offset-2" ng-controller="Bdd">
+		<h1>欢迎注册</h1>
+		<form novalidate name="nForm">
+			<div class="form-group">
+				<div class="input-group">
+					<div class="input-group-addon">用户名</div>
+					<input type="text" name="username" ng-model="username" class="form-control" 
+					placeholder="您的账户名和登录名" required ng-pattern="/^(\w|[\u4e00-\u9fa5]|-){4,20}$/" ng-blur="change('regText',nForm.username.$error)">									
+					<!-- 支持中文、数字、字母、”_”、”-”的组合 -->
+					<div class="input-group-addon" ng-cloak ng-repeat="re in regText.regList|filter:regText.regVal">{{re.bool}}</div>	
+				</div>
+				<div ng-repeat="re in regText.regList|filter:regText.regVal">{{re.tips}}</div>
+				<!-- <div>{{nForm.username.$error}}</div> -->
+			</div>
+			<div class="form-group">
+				<div class="input-group">
+					<div class="input-group-addon">设置密码</div>
+					<input type="password" name="password" ng-model="password" class="form-control" 
+					placeholder="必须为字母、数字、符号两种及以上的组合，6-20位" required ng-pattern="/^(?![\d]+$)(?![a-zA-Z]+$)(?![^\da-zA-Z]+$).{6,20}$/" ng-blur="change('regPassword',nForm.password.$error)">
+					<!-- 必须为字母、数字、符号两种及以上的组合，6-20位 -->	
+					<div class="input-group-addon" ng-cloak ng-repeat="re in regPassword.regList|filter:regPassword.regVal">{{re.bool}}</div>	
+					<!-- <div class="input-group-addon" ng-cloak ng-if="regPassword.bool">√</div> -->
+				</div>
+				<div ng-repeat="re in regPassword.regList|filter:regPassword.regVal">{{re.tips}}</div>
+				<!-- <div>{{nForm.password.$error}}</div> -->
+			</div>
+			<div class="form-group">
+				<div class="input-group">
+					<div class="input-group-addon">确认密码</div>
+					<input type="password" name="password2" ng-model="password2" class="form-control" 
+					placeholder="请再次输入密码" required ng-blur="confirm(password,password2,nForm.password.$error)">
+					<div class="input-group-addon" ng-cloak><span  ng-show="regPassword2.bool">√</span></div>
+				</div>
+					<div ng-hide="regPassword2.bool">请再次输入密码</div>
+				<!-- <div>{{nForm.password2.$error}}</div> -->
+			</div>
+			<div class="form-group">
+				<div class="input-group">
+					<div class="input-group-addon">手机号</div>
+					<input type="number" name="phonenumber" ng-model="number1" class="form-control" 
+					placeholder="建议使用常用手机号" required ng-pattern="/^1[34578]\d{9}$/"
+					ng-blur="change('regPhone',nForm.phonenumber.$error)">
+					<div class="input-group-addon" ng-cloak ng-repeat="re in regPhone.regList|filter:regPhone.regVal">{{re.bool}}</div>
+				</div>
+				<div ng-repeat="re in regPhone.regList|filter:regPhone.regVal">{{re.tips}}</div>
+				<!-- <div>{{nForm.phonenumber.$error}}</div> -->
+			</div>
+			<div class="form-group">
+				<div class="input-group">
+					<div class="input-group-addon">验证码</div>
+					<input type="text" name="identifyingCode" ng-model="text4" class="form-control" 
+					placeholder="请输入验证码" required>
+				</div>
+				<!-- <div>{{nForm.identifyingCode.$error}}</div> -->
+			</div>
+			<div class="form-group">
+				<div class="input-group">
+					<div class="input-group-addon">手机验证码</div>
+					<input type="number" name="phoneCode" ng-model="number2" class="form-control" 
+					placeholder="请输入手机验证码" required ng-pattern="/^\d{6}$/">
+				</div>
+				<!-- <div>{{nForm.phoneCode.$error}}</div> -->
+			</div>
+			<button type="submit" class="btn btn-primary btn-block">确认注册</button>
+		</form>
+	</div>
+</div>

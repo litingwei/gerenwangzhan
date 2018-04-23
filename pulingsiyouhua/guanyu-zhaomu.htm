@@ -1,0 +1,63 @@
+<!-- <p>关于招募的内容</p> -->
+<div class="row zhaomu" ng-controller="zhaomu">
+	<div class="col-sm-offset-2 col-sm-4">
+		<img src="img/3.jpg" class="img-responsive">
+	</div>
+	<div class="col-sm-4">
+		<h4>社会招聘</h4>
+		<p>如果您具有以下特质:</p>
+		<p>正直诚信、勇于创新、敬业尽责； </p>
+		<p>优秀的教育背景，专业扎实； </p>
+		<p>优秀的学习能力；</p>
+		<p>有理想，致力于为社会创造价值； </p> 
+		<p>欢迎加入我们！</p><br> 
+		<h4>硬件工程师:</h4>
+		<a ng-click="activeButton()" ng-if="!toggle">展开更多<span class="glyphicon glyphicon-menu-down"></span></a>
+		<div ng-if="toggle">
+			<dl>
+				<dt>岗位职责</dt>
+				<dd>1、负责完成产品的硬件单板、逻辑电路的设计与开发；协助PCB设计及单板试制加工；</dd>
+				<dd>2、项目要求完成总体方案、器件选型、原理图设计、调试、测试维护优化等工作，并对设计质量负责；</dd>
+				<dd>3、及时编写各种文档和标准化资料；</dd>
+				<dd>4、对本单元产品提供技术支持；</dd>
+			</dl>
+			<dl>
+				<dt>任职资格</dt>
+				<div>
+				<dd>1、本科及以上学历，通信、计算机、电子等相关专业；2年以上相关工作经验；</dd>
+				<dd>2、有较好的数模电路、信号与系统基础知识；具备一个或以上的数模电路调试经验；</dd>
+				<dd>3、有较强的动手能力，能熟练使用测试仪器和焊接</dd>
+				<dd>4、精通Protel等开发工具；精通C语言开发；</dd>
+				<dd>5、能够独立阅读英文相关资料；</dd>
+				<dd>6、工作责任感强，有较好的钻研精神和团队合作意识。</dd>
+				</div>
+			</dl>
+			<a ng-click="activeButton()" ng-if="toggle" style="float: right">收起内容<span class="glyphicon glyphicon-menu-up"></span></a>
+		</div>
+		<br>
+		<h4>软件工程师:</h4>
+		<a ng-click="activeButton2()" ng-if="!toggle2">展开更多<span class="glyphicon glyphicon-menu-down"></span></a>
+		<div ng-if="toggle2">
+			<dl>
+				<dt>岗位职责</dt>
+				<dd>1、参与项目需求分析，参与搭建系统框架和核心模块的设计；</dd>
+				<dd>2、根据项目进度完成代码开发任务；</dd>
+				<dd>3、编写文档，完成相关代码测试任务；</dd>
+				<dd>4、对代码进行维护、改进完善，以满足新需求；</dd>
+				<dd>5、参与技术功关，解决技术问题；</dd>
+			</dl>
+			<dl>
+				<dt>任职资格</dt>
+				<dd>1、计算机、电子信息类相关专业本科以上学历；</dd>
+				<dd>2、能熟练应用C、C++在Linux操作系统环境下编程；</dd>
+				<dd>3、熟悉TCP/IP协议集，熟悉各类网络通讯协议；</dd>
+				<dd>4、有嵌入式操作系统底层驱动，或导航定位经验优先；</dd>
+				<dd>5、2年以上实际研发经验；能独立承担项目任务；</dd>
+				<dd>6、能承受工作压力，有责任心和上进心。</dd>
+			</dl>
+			<a ng-click="activeButton2()" ng-if="toggle2" style="float:right">收起内容<span class="glyphicon glyphicon-menu-up"></span></a>
+		</div>
+	
+	</div>
+
+</div>

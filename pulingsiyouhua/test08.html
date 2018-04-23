@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="node_modules/angular-touch/angular-touch.min.js"></script>
+    <script src="https://cdn.bootcss.com/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script> 
+    <title>东莞普灵思智能电子有限公司</title>
+    <link rel="stylesheet" type="text/css" href="css/a.css">
+</head>
+<body>
+    <nav class="row" ng-controller="nav1">
+      <div class="col-sm-offset-2 col-sm-5" id="brand">
+        <a href="#" class="navfont">东莞市普灵思智能电子有限公司</a>
+      </div>
+      <div class="col-sm-1 font">     
+         <a ui-sref="home" class="navfont">首页</a>
+      </div>
+     <div class="col-sm-1 font" ng-mouseenter="change01('guan','about')" ng-mouseleave="change02('guan','about')">
+          <span ><a ui-sref="guanyu.gongsi" class="navfont">关于我们<span class="caret"></span></a></span> 
+            <ul class="drop01" id="guan" >
+              <li class="dropli">
+                  <a ui-sref="guanyu.gongsi" class="dropfont">公司简介</a>         
+              </li>
+              <li class="dropli">
+                  <a ui-sref="guanyu.zhaomu" class="dropfont">招募精英</a>         
+              </li>
+              <li class="dropli">
+                  <a ui-sref="guanyu.lianxi" class="dropfont">联系我们</a>          
+              </li>
+            </ul>
+        </div>
+       <div class="col-sm-1 font">
+          <span><a ui-sref="denglu" class="navfont">登录</a></span>
+          <span class="zuce"><a ui-sref="zuce" class="navfont">注册</a></span>
+       </div>
+    </nav>
+
+    <div ui-view></div> 
+    
+   <div class="jumbotron">
+       <div class="row">
+           <div class="col-sm-offset-8 col-sm-2">
+               <ul class="list-unstyled">
+                   <li style="padding-bottom:5px;">关于我们</li>
+                   <li><a ui-sref="guanyu.gongsi">公司简介</a></li>
+                   <li><a ui-sref="guanyu.zhaomu">招募精英</a></li>
+                   <li><a ui-sref="guanyu.lianxi">联系我们</a></li>
+               </ul>
+           </div>
+       </div>
+   </div> 
+</body>
+<script src="js/main.js"></script>
+</html>
