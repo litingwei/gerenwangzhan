@@ -96,9 +96,9 @@
 					</div>
 					<div class="fl">
 						<img src="img/03.jpg">
-						<a href="" target="_blank">
+						<a href="xiaomigithub/index.html" target="_blank">
 							<div>
-								<h4>电商类首页</h4>
+								<h4>小米官网首页</h4>
 								<p>css3布局，js写动画</p>
 								<img src="img/search.png">
 							</div>
@@ -172,5 +172,47 @@
 		
 	</section>
 	<!-- <footer class="wrap" id="footer"></footer> -->
+	<script type="text/javascript">
+	var oSec3=document.querySelector('#section3 .container');
+	console.log(oSec3);
+	function getElementTop(ele){
+		var actualTop=ele.offsetTop;
+		var current=ele.offsetParent;
+		while(current!==null){
+			actualTop+=current.offsetTop;
+			current=current.offsetParent;
+		}
+		return actualTop;
+	};
+	var oSec5=document.querySelector('#section5 .container');
+	var box=document.querySelectorAll('#section5 .dataBox');
+	function aa(){
+		for(var i=0;i<box.length;i++){
+			//console.log(box[i]);
+			
+			box[i].style.left="50%";
+		}
+	}
+	window.onscroll=function(){
+		var t1=getElementTop(oSec3)+200;	
+		var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+		var t2=scrollTop+document.documentElement.clientHeight;
+		//console.log('t2',t2);
+		if(t1<t2){
+			//alert(1);
+			oSec3.style.opacity=1;
+		}
+		var t3=getElementTop(oSec5)+200;
+		//console.log(box);
+		if(t3<t2){
+			/*for(let i=0;i<box.length;i++){
+				box[i].style.left=50%
+			}*/
+			aa()
+		}
+	}
+	
+	
+	</script>
 </body>
 </html>
