@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jd_pic</title>
+	<style>
+		a{text-decoration: none; color: #b9d7dd; line-height: 40px;width: 24px; height: 40px;display: inline-block;text-align: center;background: #000; opacity: 0.2;}
+		ul{padding: 0; margin: 0; position: absolute; top: 436px; left: 50px;} 
+		li{list-style: none; width: 6px; height: 6px; border-radius: 50%;border: 2px solid #f1f1f1;float: left; margin-right: 9px;}
+		.li_active{background: #fcf;}
+		img{width: 590px;height: 470px;}
+		#div{position: relative;width: 590px;height: 470px;}
+		span{width: 24px; height: 40px; position: absolute; top: 215px;}
+		#left{left:0;}
+		#right{left:566px;}
+		.over{opacity: 0.6;}
+	</style>
+</head>
+
+<body>
+	<div id="div">
+		<img src="pic/1.jpg" alt="">
+		<span id="left"><a href="javascript:;"><</a></span>
+		<span id="right"><a href="javascript:;">></a></span>
+		<ul id="ul">
+			<li class="li_active"></li>	
+			<li></li>	
+			<li></li>	
+			<li></li>	
+			<li></li>	
+			<li></li>	
+			<li></li>	
+			<li></li>		
+		</ul>
+	</div>
+	<script>
+		var odiv = document.getElementById('div');
+		var oul = document.getElementById('ul');
+		var oimg = odiv.firstElementChild;
+		var aa  = odiv.getElementsByTagName('a');
+		var ali = oul.children;
+		var n = 0;
+
+		var oPrev=document.getElementById('left');
+		var oNext=document.getElementById('right');
+		var oImg=document.getElementById('img1');
+		var arr_pic = ['pic/1.jpg','pic/2.jpg','pic/3.jpg','pic/4.jpg','pic/5.jpg','pic/6.jpg','pic/7.jpg','pic/8.jpg'];
+		var num=0;
+		//初始化
+		function fnTab(){
+			oSpan.innerHTML=num+1+'/'+arrText.length;
+			oImg.src=arrUrl[num];
+			oText.innerHTML=arrText[num];
+		}
+		fnTab();
+		oPrev.onclick=function(){
+			num--;
+			if(num==-1){
+				num=arrText.length-1;
+			} 
+			fnTab();
+		}
+		function aa(){
+			num++;
+			if(num==arrText.length){
+				num=0;
+			}
+			fnTab();
+		}
+		oNext.onclick=function(){
+			aa();
+		}
+		var timer=setInterval(aa,1000);
+		oContent.onmouseover=function(){
+			clearInterval(timer);
+		}
+		oContent.onmouseout=function(){
+			clearInterval(timer);
+			timer=setInterval(aa,1000);
+		}
+
+
+
+/*		var that = ali[0];
+		var timer = null;
+		for(var i=0;i<ali.length;i++){
+			ali[i].index = i;
+			ali[i].onmouseover = function(){
+				n = this.index;
+				fn_change(oimg,this.index);
+				this.classList.add('li_active');
+				that.classList.remove('li_active');
+				that = this;
+			}
+		}
+		setInterval(function(){
+			n++;
+			change();
+			
+		},3000)
+		
+		for(var i=0;i<aa.length;i++){
+			aa[i].onmouseover = function(){
+				this.className = 'over';
+				
+			}
+			aa[i].onmouseout = function(){
+				this.className = '';
+				
+			}
+		}
+		aa[1].onclick = function(){
+			n++;
+			change();
+		}
+		aa[0].onclick = function(){
+			n--;
+			change();
+		}
+		function change(){
+			if(n == ali.length){
+				n = 0;
+			}else if(n<0){
+				n = ali.length-1;
+			}
+			
+			ali[n].classList.add('li_active');
+			that.classList.remove('li_active');
+			that = ali[n];
+			fn_change(oimg,n);
+		}
+		function fn_change(img,index){
+			oimg.src = arr_pic[index];
+		}*/
+		
+	</script>
+</body>
+</html>
