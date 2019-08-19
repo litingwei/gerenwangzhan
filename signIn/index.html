@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.wrapper {
+			width: 300px;
+			height: 180px;
+			border: 1px solid #ccc;
+			padding: 20px 30px;
+		}
+		p{
+			text-align: center;
+			margin-bottom: 30px;
+		}
+		#name {
+			width: 200px;
+			height: 20px;
+			margin:10px 0;
+			border: 1px solid #ccc;
+			padding: 6px 12px;
+		}
+		button {
+			width: 224px;
+			height:30px;
+			background:#337ab7;
+			color: white;
+			font-size: 18px;
+			border: 1px solid #2e6da4;
+			border-radius: 5px;
+			margin: 10px 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<p id="tip">请输入账户</p>
+		<div id="signUp">
+			<input type="text" placeholder="姓名" id="name" required><br>
+			<!-- <input type="button" value="登录" id="btn">	 -->
+			<button id="btn">登录</button>
+		</div>
+		<div id="page2" style="display: none">
+			<!-- <input type="button" id="exit" value="退出"> -->
+			<button id="exit">退出</button>
+		</div>
+	</div>
+	<script type="text/javascript">
+	    var oSignUp=document.getElementById('signUp');
+		var oName=document.getElementById('name');
+		var oBtn=document.getElementById('btn');
+		var oPage2=document.getElementById('page2');
+		var tip=document.getElementById("tip");
+		var oExit=document.getElementById("exit");
+		oSignUp.style.display="none";
+		tip.style.display="none";
+		
+		function sinOut(){
+			oSignUp.style.display="block";
+			tip.style.display="block";
+			tip.innerHTML='请输入账户';
+			oPage2.style.display="none";
+		}
+		function sinIn(res){
+			oSignUp.style.display="none";
+			tip.style.display="block";
+			tip.innerHTML='你好，'+res.username;
+			oPage2.style.display="block";
+			oName.value='';
+		}
+		oBtn.onclick=function (){
+			if(!oName.value){
+				alert("请输入姓名");
+				return;
+			}
+			ajax({
+				type:'post',
+				url:'1.post.php',
+				data:'username='+oName.value,
+				success:function(res){
+					var res=JSON.parse(res);
+					if(!res.code){
+						sinIn(res);
+					}
+				}
+			})
+		}
+		oExit.onclick=function(){
+			ajax({
+				type:'post',
+				url:'exit.php',
+				data:'',
+				success:function(res){
+					var res=JSON.parse(res);
+					if(!res.code){
+						sinOut(res);
+					}
+				}
+			})
+		}
+		window.onload=function(){
+			ajax({
+				type:'post',
+				url:'refresh.php',
+				data:'',
+				success:function(res){
+					var res=JSON.parse(res);
+					if(!res.code){
+						sinIn(res);
+					}else{
+						sinOut();
+					}
+				}
+			})
+		};
+		function ajax(obj){
+			var xhr=null;
+			try{
+				xhr=new XMLHttpRequest();
+			} catch(e){
+				xhr=new ActiveXObject('Microsoft.XMLHTTP');//兼容ie6
+			}
+
+			if(!obj.type){
+				obj.type='get';
+			}
+			if(obj.type=='get'&&obj.data){
+				obj.url+='?'+encodeURI(obj.data)+'&'+new Date().getTime();
+			}
+
+			xhr.open(obj.type,obj.url,true);
+
+			if(obj.type=='get'){
+				xhr.send();
+			}else{
+				xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
+				xhr.send(obj.data);
+			}
+
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState===4){
+					if(xhr.status==200){
+						obj.success&&obj.success(xhr.responseText);
+					}else{
+						alert('出错了，Err: '+xhr.status);
+					}
+				}
+			}
+		}
+	</script>
+</body>
+</html>
